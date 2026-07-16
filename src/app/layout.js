@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
-
+import SmoothScroll from "@/components/Section/SmoothScroll";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -21,8 +21,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-[#0A0D12] pt-[70px] overflow-x-hidden">
+        {/* Navbar stays OUTSIDE the smooth-scroll wrapper so it keeps working
+            as a normal fixed-position element, unaffected by the scroll transform */}
         <Navbar />
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );

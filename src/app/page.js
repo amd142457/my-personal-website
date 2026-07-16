@@ -18,8 +18,8 @@ import Footer from "@/components/Section/Footer";
 export default function Home() {
   return (
     <main>
+      \
       <Navbar />
-
       <Hero />
       <WorkflowDiagram />
       <TechMarquee />
